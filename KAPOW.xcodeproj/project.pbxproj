@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61DEA5A98BC0799B1091B4D8 /* Pods_KAPOW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4986CA44253A095345584904 /* Pods_KAPOW.framework */; };
 		B9594C451D7B2DC500C523BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9594C441D7B2DC500C523BE /* AppDelegate.swift */; };
 		B9594C491D7B2DC600C523BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9594C481D7B2DC600C523BE /* Assets.xcassets */; };
 		B9594C4C1D7B2DC600C523BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9594C4A1D7B2DC600C523BE /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43EB0C3C366D795F88FA1755 /* Pods-KAPOW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KAPOW.release.xcconfig"; path = "Pods/Target Support Files/Pods-KAPOW/Pods-KAPOW.release.xcconfig"; sourceTree = "<group>"; };
+		4986CA44253A095345584904 /* Pods_KAPOW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KAPOW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		542BDB4627E108E1AD10BBDD /* Pods-KAPOW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KAPOW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KAPOW/Pods-KAPOW.debug.xcconfig"; sourceTree = "<group>"; };
 		B9594C411D7B2DC500C523BE /* KAPOW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KAPOW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9594C441D7B2DC500C523BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9594C481D7B2DC600C523BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -25,17 +29,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61DEA5A98BC0799B1091B4D8 /* Pods_KAPOW.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7860DF4117C93CFF41AE391F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4986CA44253A095345584904 /* Pods_KAPOW.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B9594C381D7B2DC500C523BE = {
 			isa = PBXGroup;
 			children = (
 				B9594C431D7B2DC500C523BE /* KAPOW */,
 				B9594C421D7B2DC500C523BE /* Products */,
+				EA0C6E2050B4418929286DA7 /* Pods */,
+				7860DF4117C93CFF41AE391F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +73,15 @@
 			path = KAPOW;
 			sourceTree = "<group>";
 		};
+		EA0C6E2050B4418929286DA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				542BDB4627E108E1AD10BBDD /* Pods-KAPOW.debug.xcconfig */,
+				43EB0C3C366D795F88FA1755 /* Pods-KAPOW.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,9 +89,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9594C501D7B2DC600C523BE /* Build configuration list for PBXNativeTarget "KAPOW" */;
 			buildPhases = (
+				8222C028788D48F75787435E /* [CP] Check Pods Manifest.lock */,
 				B9594C3D1D7B2DC500C523BE /* Sources */,
 				B9594C3E1D7B2DC500C523BE /* Frameworks */,
 				B9594C3F1D7B2DC500C523BE /* Resources */,
+				336AE1CB3DF4B12FB1541520 /* [CP] Embed Pods Frameworks */,
+				6B6E0C624309F26CFCBFC417 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,6 +149,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		336AE1CB3DF4B12FB1541520 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KAPOW/Pods-KAPOW-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B6E0C624309F26CFCBFC417 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KAPOW/Pods-KAPOW-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8222C028788D48F75787435E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B9594C3D1D7B2DC500C523BE /* Sources */ = {
@@ -230,6 +305,7 @@
 		};
 		B9594C511D7B2DC600C523BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 542BDB4627E108E1AD10BBDD /* Pods-KAPOW.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -242,6 +318,7 @@
 		};
 		B9594C521D7B2DC600C523BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43EB0C3C366D795F88FA1755 /* Pods-KAPOW.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -271,6 +348,7 @@
 				B9594C521D7B2DC600C523BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
