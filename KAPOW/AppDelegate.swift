@@ -7,14 +7,82 @@
 //
 
 import Cocoa
+import MASShortcut
+import AppKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    
+    var mainWindow: NSWindow?
+    
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         
+        if let window = NSApplication.shared().windows.first {
+            mainWindow = window
+            window.setFrame(NSRect(x: 0, y: 0, width: 0, height: 0), display: true, animate: false)
+            window.isOpaque = false
+            window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.floatingWindow))
+            window.collectionBehavior = .canJoinAllSpaces
+        }
+        
+        configureShortcut()
     }
-
-    func applicationWillTerminate(aNotification: NSNotification) {}
+    
+    func configureShortcut() {
+        
+        guard let shortcut =  MASShortcut(keyCode: UInt(kVK_ANSI_A),
+                                          modifierFlags: NSEventModifierFlags.command.rawValue) else { return }
+        
+        let archivedKey = NSKeyedArchiver.archivedData(withRootObject: shortcut)
+        UserDefaults.standard.setValue(archivedKey, forKey: "KAPOWShortcut")
+    
+        MASShortcutBinder.shared().bindShortcut(withDefaultsKey: "KAPOWShortcut", toAction: { [weak self] in
+            self?.shot()
+        })
+    }
+    
+    func applicationWillTerminate(_ aNotification: Notification) {}
+    
+    func shot () {
+        print("Shot!")
+        
+        let rect = NSScreen.main()?.frame
+        let window = NSWindow(contentRect: rect!, styleMask: NSBorderlessWindowMask, backing: NSBackingStoreType.buffered, defer: false)
+        window.backgroundColor = NSColor.clear
+        window.isOpaque = false
+        window.alphaValue = 1
+        window.makeKeyAndOrderFront(NSApplication.shared())
+        window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.floatingWindow))
+        mainWindow?.addChildWindow(window, ordered: NSWindowOrderingMode.above)
+        
+        let num = arc4random_uniform(3) + 1
+        let image = NSImage(named: "kapow\(num)")
+        let imageView = NSImageView(frame: window.frame)
+        imageView.image = image
+        imageView.wantsLayer = true
+        window.contentView?.addSubview(imageView)
+        
+        imageView.layer?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        
+        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
+        scaleAnimation.fromValue = 0.2
+        scaleAnimation.toValue = 5
+        
+        let alphaAnimation = CABasicAnimation(keyPath: "opacity")
+        alphaAnimation.fromValue = 1
+        alphaAnimation.toValue = 0
+        
+        let animationGroup = CAAnimationGroup()
+        animationGroup.duration = 1
+        animationGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        animationGroup.fillMode = kCAFillModeForwards
+        animationGroup.isRemovedOnCompletion = false
+        animationGroup.animations = [scaleAnimation, alphaAnimation]
+        CATransaction.begin()
+        CATransaction.setCompletionBlock { [weak self] in
+            self?.mainWindow?.removeChildWindow(window)
+        }
+        imageView.layer?.add(animationGroup, forKey: "fullAnimation")
+        CATransaction.commit()
+    }
 }
-
