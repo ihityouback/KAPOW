@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func configureShortcut() {
         
-        guard let shortcut =  MASShortcut(keyCode: UInt(kVK_ANSI_A),
+        guard let shortcut =  MASShortcut(keyCode: UInt(kVK_ANSI_Q),
                                           modifierFlags: NSEventModifierFlags.command.rawValue) else { return }
         
         let archivedKey = NSKeyedArchiver.archivedData(withRootObject: shortcut)
