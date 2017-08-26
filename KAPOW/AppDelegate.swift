@@ -14,6 +14,7 @@ import AppKit
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var mainWindow: NSWindow?
+    let images = ImagesManager()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
@@ -55,10 +56,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.floatingWindow))
         mainWindow?.addChildWindow(window, ordered: NSWindowOrderingMode.above)
         
-        let num = arc4random_uniform(2) + 1
-        let image = NSImage(named: "kapow\(num)")
         let imageView = NSImageView(frame: window.frame)
-        imageView.image = image
+        imageView.image = images.randomImage()
         imageView.wantsLayer = true
         window.contentView?.addSubview(imageView)
         
