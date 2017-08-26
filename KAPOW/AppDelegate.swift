@@ -55,7 +55,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.level = Int(CGWindowLevelForKey(CGWindowLevelKey.floatingWindow))
         mainWindow?.addChildWindow(window, ordered: NSWindowOrderingMode.above)
         
-        let num = arc4random_uniform(3) + 1
+        let num = arc4random_uniform(2) + 1
         let image = NSImage(named: "kapow\(num)")
         let imageView = NSImageView(frame: window.frame)
         imageView.image = image
