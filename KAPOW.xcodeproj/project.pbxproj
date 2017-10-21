@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4AD342D81F519A44004B3E27 /* ImagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD342D71F519A44004B3E27 /* ImagesManager.swift */; };
 		4AD342DB1F51A6AF004B3E27 /* Images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4AD342DA1F51A6AF004B3E27 /* Images.bundle */; };
+		4AD342DE1F51BAFE004B3E27 /* TouchbarCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD342DD1F51BAFE004B3E27 /* TouchbarCanvas.swift */; };
+		4AD342E01F51BB64004B3E27 /* Canvas.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AD342DF1F51BB64004B3E27 /* Canvas.xib */; };
 		61DEA5A98BC0799B1091B4D8 /* Pods_KAPOW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4986CA44253A095345584904 /* Pods_KAPOW.framework */; };
 		B9594C451D7B2DC500C523BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9594C441D7B2DC500C523BE /* AppDelegate.swift */; };
 		B9594C491D7B2DC600C523BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9594C481D7B2DC600C523BE /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 		4986CA44253A095345584904 /* Pods_KAPOW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KAPOW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD342D71F519A44004B3E27 /* ImagesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesManager.swift; sourceTree = "<group>"; };
 		4AD342DA1F51A6AF004B3E27 /* Images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Images.bundle; sourceTree = "<group>"; };
+		4AD342DD1F51BAFE004B3E27 /* TouchbarCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchbarCanvas.swift; sourceTree = "<group>"; };
+		4AD342DF1F51BB64004B3E27 /* Canvas.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Canvas.xib; sourceTree = "<group>"; };
 		542BDB4627E108E1AD10BBDD /* Pods-KAPOW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KAPOW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KAPOW/Pods-KAPOW.debug.xcconfig"; sourceTree = "<group>"; };
 		B9594C411D7B2DC500C523BE /* KAPOW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KAPOW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9594C441D7B2DC500C523BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,15 @@
 				4AD342DA1F51A6AF004B3E27 /* Images.bundle */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		4AD342DC1F51BAE2004B3E27 /* Touchbar */ = {
+			isa = PBXGroup;
+			children = (
+				4AD342DD1F51BAFE004B3E27 /* TouchbarCanvas.swift */,
+				4AD342DF1F51BB64004B3E27 /* Canvas.xib */,
+			);
+			name = Touchbar;
 			sourceTree = "<group>";
 		};
 		7860DF4117C93CFF41AE391F /* Frameworks */ = {
@@ -78,6 +91,7 @@
 		B9594C431D7B2DC500C523BE /* KAPOW */ = {
 			isa = PBXGroup;
 			children = (
+				4AD342DC1F51BAE2004B3E27 /* Touchbar */,
 				B9594C441D7B2DC500C523BE /* AppDelegate.swift */,
 				4AD342D71F519A44004B3E27 /* ImagesManager.swift */,
 				B9594C4A1D7B2DC600C523BE /* Main.storyboard */,
@@ -161,6 +175,7 @@
 				B9594C491D7B2DC600C523BE /* Assets.xcassets in Resources */,
 				B9594C4C1D7B2DC600C523BE /* Main.storyboard in Resources */,
 				4AD342DB1F51A6AF004B3E27 /* Images.bundle in Resources */,
+				4AD342E01F51BB64004B3E27 /* Canvas.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9594C451D7B2DC500C523BE /* AppDelegate.swift in Sources */,
+				4AD342DE1F51BAFE004B3E27 /* TouchbarCanvas.swift in Sources */,
 				4AD342D81F519A44004B3E27 /* ImagesManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

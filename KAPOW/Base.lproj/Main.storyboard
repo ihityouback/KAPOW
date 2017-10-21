@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="1AV-Ji-EKp">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="1AV-Ji-EKp">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="12062"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="the Touch Bar" message="Use a version of macOS with Touch Bar support." minToolsVersion="8.1" minSystemVersion="10.12.1" requiredIntegratedClassName="NSTouchBar"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -656,8 +658,31 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
                     </window>
+                    <touchBar key="touchBar" id="Q80-Oi-VMU">
+                        <touchBarItems>
+                            <touchBarItem id="s5t-4o-Oye">
+                                <viewController key="viewController" id="bg2-lm-a9z">
+                                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="HKj-jy-EMp">
+                                        <rect key="frame" x="0.0" y="0.0" width="685" height="22"/>
+                                        <subviews>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="RZi-nd-tli" customClass="ViewCanvas" customModule="KAPOW" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="685" height="22"/>
+                                            </customView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="RZi-nd-tli" secondAttribute="trailing" id="06x-RX-LSR"/>
+                                            <constraint firstItem="RZi-nd-tli" firstAttribute="leading" secondItem="HKj-jy-EMp" secondAttribute="leading" id="0dB-uA-8Nw"/>
+                                            <constraint firstItem="RZi-nd-tli" firstAttribute="top" secondItem="HKj-jy-EMp" secondAttribute="top" id="2Gh-2O-a5v"/>
+                                            <constraint firstAttribute="bottom" secondItem="RZi-nd-tli" secondAttribute="bottom" id="VeK-Bl-Ep9"/>
+                                        </constraints>
+                                    </view>
+                                </viewController>
+                                <size key="designTimeSize" width="685" height="22"/>
+                            </touchBarItem>
+                        </touchBarItems>
+                    </touchBar>
                     <connections>
                         <segue destination="Fo3-HP-5W5" kind="relationship" relationship="window.shadowedContentViewController" id="svr-Qe-qZi"/>
                     </connections>
